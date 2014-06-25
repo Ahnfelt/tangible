@@ -16,6 +16,10 @@ You can adjust each slider and immediately see how the result changes [1].
 
 Instead of sliders, you could have widgets or other visualizations of values.
 
+- Boxes represents functions. 
+- Italic names are names of function parameters, followed by their value.
+- Bold names are names of functions, followed by the return value.
+
 *TODO: Well, everything.*
 
 References
