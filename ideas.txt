@@ -1,0 +1,52 @@
+Loosely based on Tangible Functional Programming by Conal M. Elliott.
+
+
+
+A function like the following could be represented as test4: 
+    \a -> max a (sin a)
+
+
+
+Clicking on a parameter name gives the following options:
+    - Lock / unlock parameter (if the value is fully determined).
+    - Insert a different widget/funciton of a matching type (with search).
+    - Use an existing parameter value or add a new parameter.
+    - Rename parameter.
+    - Move the parameter up/down.
+
+
+Clicking on a function name gives the following options:
+    - Replace the function with a different function.
+    - Add a parameter.
+    - Rename the function.
+
+    
+
+When a parameter is locked:
+    - It's label is muted and the value is hidden.
+    - When the function is called elsewhere, the parameter is completely hidden.
+    
+    
+
+When the type of a parameter or return value is not known:
+    - Display a dashed hole that can be filled in with any widget.
+
+    
+
+Exceptions:
+    - Any expression involving an exception evaluates to that exception.
+    - Exceptions carry an error message.
+    - Exceptions error messages are displayed in place of the normal widget.
+    
+
+A game could be like this:
+
+data Game s = Game {
+    initialState :: s,
+    onEvent :: (Event -> s -> s), 
+    draw :: (s -> Picture)
+
+data Event
+    = TimeDelta Double
+    | Touch Int Int
+
